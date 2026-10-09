@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="photo-frame">
             <img
               className="hero-photo"
-              src="/images/hero-dp.png"
+              src="/images/i'm3.png"
               alt="M D L U Kavishka — Full-Stack Developer"
             />
           </div>
