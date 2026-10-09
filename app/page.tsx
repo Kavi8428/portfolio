@@ -2,18 +2,18 @@
 
 import { useRef, useState } from "react";
 import { useAnimations } from "@/hooks/useAnimations";
-import Header from "@/component/header/Header";
-import Hero from "@/component/hero/Hero";
-import ProjectsSection from "@/component/case-study/ProjectsSection";
-import SkillsSection from "@/component/capability/SkillsSection";
-import WritingSection from "@/component/notes/WritingSection";
-import Footer from "@/component/footer/Footer";
+import Header from "@/components/header/Header";
+import Hero from "@/components/hero/Hero";
+import AboutSection from "@/components/about/AboutSection";
+import ProjectsSection from "@/components/case-study/ProjectsSection";
+import SkillsSection from "@/components/capability/SkillsSection";
+import WritingSection from "@/components/notes/WritingSection";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const root = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLDivElement>(null);
   const cursorDot = useRef<HTMLDivElement>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
 
   useAnimations(root, cursor, cursorDot);
@@ -37,8 +37,9 @@ export default function Home() {
       <div ref={cursor} className="cursor-ring" />
       <div ref={cursorDot} className="cursor-dot" />
 
-      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header />
       <Hero />
+      <AboutSection />
 
       <div className="marquee">
         <div className="marquee-track">

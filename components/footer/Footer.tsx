@@ -34,8 +34,8 @@ export default function Footer({ sent, handleSubmit }: FooterProps) {
           <span className="section-kicker">GET IN TOUCH</span>
           <h2>Let&apos;s build<br /><em>something useful.</em></h2>
         </div>
-        <a className="email-link" href="mailto:hello@kavishka.dev">
-          hello@kavishka.dev <ArrowUpRight size={20} />
+        <a className="email-link" href="mailto:lakshanudara987@gmail.com">
+          lakshanudara987@gmail.com <ArrowUpRight size={20} />
         </a>
       </div>
 
@@ -61,13 +61,13 @@ export default function Footer({ sent, handleSubmit }: FooterProps) {
             <div><b>Currently available</b><small>for freelance & product work</small></div>
           </div>
           <div className="socials">
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Kavi8428" target="_blank" rel="noreferrer">
               <Github size={17} /> GitHub <ArrowUpRight size={15} />
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/m-d-l-u-kavishka" target="_blank" rel="noreferrer">
               <Linkedin size={17} /> LinkedIn <ArrowUpRight size={15} />
             </a>
-            <a href="mailto:hello@kavishka.dev">
+            <a href="mailto:lakshanudara987@gmail.com">
               <Mail size={17} /> Email <ArrowUpRight size={15} />
             </a>
           </div>

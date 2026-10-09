@@ -33,7 +33,9 @@ export function useAnimations(
         .to(".hero-photo", { scale: 1, opacity: 1, x: 0, duration: 1.35 }, "-=0.35")
         .to(".hero-word", { yPercent: 0, duration: 1.1, stagger: 0.08 }, "-=0.95")
         .to(".reveal-item", { y: 0, opacity: 1, duration: 0.9, stagger: 0.07 }, "-=0.7")
-        .fromTo(".hero-orb", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4 }, "-=1.0");
+        .fromTo(".hero-orb", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4 }, "-=1.0")
+        .fromTo(".dot-nav", { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.8")
+        .fromTo(".bottom-nav", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.8");
 
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
         gsap.fromTo(el, { y: 75, opacity: 0 }, {
@@ -56,6 +58,65 @@ export function useAnimations(
           scrollTrigger: { trigger: row, start: "top 90%", once: true }
         });
       });
+
+      // Bio Section — Portrait Card Entrance
+      gsap.fromTo(".bio-portrait-card",
+        { y: 60, opacity: 0, scale: 0.96 },
+        {
+          y: 0, opacity: 1, scale: 1, duration: 1.1, ease: "power3.out",
+          scrollTrigger: { trigger: ".bio-portrait-card", start: "top 85%", once: true }
+        }
+      );
+
+      // Inner Image Parallax
+      gsap.to(".bio-portrait-img-box .bio-photo", {
+        y: -25,
+        ease: "none",
+        scrollTrigger: { trigger: ".bio-portrait-card", start: "top bottom", end: "bottom top", scrub: 1 }
+      });
+
+      // Bio Section — Staggered text & facts reveal
+      gsap.fromTo(".bio-body p",
+        { y: 45, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.9, stagger: 0.15, ease: "power3.out",
+          scrollTrigger: { trigger: ".bio-body", start: "top 85%", once: true }
+        }
+      );
+
+      gsap.fromTo(".bio-fact-item",
+        { y: 35, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.75, stagger: 0.1, ease: "power2.out",
+          scrollTrigger: { trigger: ".bio-personal-info", start: "top 88%", once: true }
+        }
+      );
+
+      // Interest pillars — stagger in from below
+      gsap.fromTo(".bio-pillar",
+        { y: 50, opacity: 0, scale: 0.95 },
+        {
+          y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: ".bio-interests", start: "top 85%", once: true }
+        }
+      );
+
+      // Education timeline — vertical line draw & items slide
+      gsap.fromTo(".edu-list::before",
+        { scaleY: 0 },
+        {
+          scaleY: 1, duration: 1.2, ease: "power3.inOut", transformOrigin: "top",
+          scrollTrigger: { trigger: ".edu-list", start: "top 82%", once: true }
+        }
+      );
+
+      gsap.fromTo(".edu-item",
+        { x: -45, opacity: 0 },
+        {
+          x: 0, opacity: 1, duration: 0.85, stagger: 0.15, ease: "power3.out",
+          scrollTrigger: { trigger: ".edu-list", start: "top 82%", once: true }
+        }
+      );
 
       gsap.to(".marquee-track", {
         xPercent: -50,

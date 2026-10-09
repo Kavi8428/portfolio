@@ -25,7 +25,7 @@ export default function Hero() {
                 Explore my work <ArrowDownRight size={18} />
               </a>
             </Magnetic>
-            <a href="https://github.com/" className="text-link" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Kavi8428" className="text-link" target="_blank" rel="noreferrer">
               <Github size={17} /> GitHub
             </a>
           </div>
